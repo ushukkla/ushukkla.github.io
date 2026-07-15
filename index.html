@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utkarsh Shukla — Senior AI Engineer</title>
+<meta name="description" content="Utkarsh Shukla — Senior AI Engineer in Austin, TX. Applied ML, agents, and tools that let non-engineers do engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden;width:100%}
+  :root{--acc:#e8500f;color-scheme:light}
+  body{margin:0;background:#e9e7e2;font-family:"Helvetica Neue",Arial,sans-serif;color:#111;-webkit-font-smoothing:antialiased}
+  a{color:#111;text-decoration:none;transition:color .15s ease}
+  a:hover{color:#e8500f}
+  ::selection{background:#e8500f;color:#fff}
+  button{transition:color .15s ease,background .15s ease,border-color .15s ease}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes triviaIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+  .img-slot{width:100%;height:100%;background:repeating-linear-gradient(45deg,#e4e1da,#e4e1da 10px,#e0ddd5 10px,#e0ddd5 20px);border:1px solid rgba(0,0,0,.12);display:flex;align-items:center;justify-content:center;text-align:center}
+  .img-slot span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.34);padding:0 8px}
+  .ph-img{transition:transform .5s ease}
+  .ph-img:hover{transform:scale(1.03)}
+  img{max-width:100%}
+  .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:4px;width:34px;height:34px}
+  .nav-toggle span{display:block;width:20px;height:2px;background:#111;transition:transform .22s ease,opacity .18s ease}
+  nav.open .nav-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg)}
+  nav.open .nav-toggle span:nth-child(2){opacity:0}
+  nav.open .nav-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
+  /* Tablet */
+  @media (min-width:761px) and (max-width:1024px){
+    nav{padding:14px 28px !important}
+    main{padding-left:30px !important;padding-right:30px !important}
+    .r-pad{padding:38px 30px !important}
+    .r-band{padding:30px 30px !important}
+    .r-founder{padding:32px 30px !important;gap:26px !important}
+    .r-hero{padding:44px 30px 28px !important;gap:32px !important}
+    .r-h1{font-size:58px !important}
+    .r-h1-sm{font-size:46px !important}
+    .r-portrait{height:340px !important}
+    .r-books{grid-template-columns:repeat(3,1fr) !important}
+    .r-projgrid{margin-left:0 !important}
+  }
+  /* Phone */
+  @media (max-width:760px){
+    nav{padding:11px 20px !important;align-items:center !important;gap:12px !important}
+    .nav-toggle{display:inline-flex !important;margin-right:auto !important}
+    .nav-links{display:none !important;position:absolute;top:100%;left:0;right:0;flex-direction:column !important;align-items:stretch !important;gap:0 !important;background:#f4f2ee;border-bottom:1px solid rgba(0,0,0,.14);box-shadow:0 16px 24px -18px rgba(0,0,0,.5);padding:4px 20px 10px}
+    nav.open .nav-links{display:flex !important}
+    .nav-links button{padding:13px 2px !important;font-size:15px !important;text-align:left;border-bottom:1px solid rgba(0,0,0,.08)}
+    .nav-cta{padding:6px 11px !important;font-size:11px !important}
+    main{padding-left:22px !important;padding-right:22px !important}
+    .r-pad{padding:32px 22px !important}
+    .r-band{padding:28px 22px !important}
+    .r-founder{grid-template-columns:1fr !important;gap:16px !important;padding:28px 22px !important}
+    .r-hero{grid-template-columns:1fr !important;gap:26px !important;padding:34px 22px 24px !important}
+    .r-portrait{height:300px !important}
+    .r-h1{font-size:44px !important}
+    .r-h1-sm{font-size:38px !important}
+    .r-oneliner{font-size:30px !important;min-height:0 !important}
+    .r-trivia{grid-template-columns:1fr !important}
+    .r-trivia>div{border-right:none !important;border-bottom:1px solid rgba(0,0,0,.14)}
+    .r-featured{grid-template-columns:1fr auto !important}
+    .r-tag{display:none !important}
+    .r-2col{grid-template-columns:1fr !important;gap:4px 0 !important}
+    .r-chapterhd{grid-template-columns:1fr !important;gap:6px !important}
+    .r-chnum{font-size:38px !important}
+    .r-projgrid{grid-template-columns:1fr !important;margin-left:0 !important}
+    .r-projgrid2{grid-template-columns:1fr !important}
+    .r-books{grid-template-columns:repeat(2,1fr) !important;gap:26px 20px !important}
+    .r-photos{grid-template-columns:repeat(2,1fr) !important}
+    .r-contact{grid-template-columns:1fr !important;gap:4px !important}
+    .r-contact span:nth-child(2){font-size:19px !important;overflow-wrap:anywhere}
+    .r-contact span:nth-child(3){display:none !important}
+  }
+</style>
+</head>
+<body>
+<div id="app"></div>
+
+<script>
+"use strict";
+
+var RESUME_MAILTO = "mailto:shuklautkarsh.u16@gmail.com?subject=" +
+  encodeURIComponent("Résumé request") + "&body=" +
+  encodeURIComponent("Hi Utkarsh,\n\nI'd like a copy of your résumé. Could you send it to this email address?\n\nThanks,");
+
+/* ---------------- DATA (ported verbatim from the design) ---------------- */
+const DATA = {
+  lines: [
+    "Make the machine disappear.",
+    "Less model, more meaning.",
+    "Ten milliseconds, or it didn't happen.",
+    "The best AI is the AI you never notice.",
+    "Ship the boring parts brilliantly.",
+    "Good design is as little design as possible.",
+  ],
+  trivia: [
+    { n: "01", t: "The word “algorithm” comes from al-Khwārizmī, a 9th-century Persian mathematician." },
+    { n: "02", t: "“Attention is all you need” — a 2017 paper that quietly became an entire industry." },
+    { n: "03", t: "e^{iπ} + 1 = 0 — five constants, one line, nothing wasted." },
+    { n: "04", t: "A perceptron ran in hardware in 1958, wired by hand, before software caught up." },
+    { n: "05", t: "There are more legal chess positions than atoms in the observable universe." },
+    { n: "06", t: "Backpropagation is just the chain rule, applied with a great deal of patience." },
+    { n: "07", t: "A neural net with a single hidden layer can approximate almost any function — given enough width." },
+  ],
+  nav: [
+    { key: "home", label: "Home" },
+    { key: "work", label: "Work" },
+    { key: "writing", label: "Writing" },
+    { key: "books", label: "Books" },
+    { key: "photos", label: "Photos" },
+    { key: "contact", label: "Contact" },
+  ],
+  companies: [
+    { logoSlot: "logo-tricentis", n: "01", mono: "T", name: "Tricentis", meta: "Senior AI Engineer · 2026–Present · Austin, TX",
+      blurb: "Bringing agentic AI to enterprise software testing — from a smarter chatbot to a reusable agent framework.",
+      projects: [
+        { name: "qTest Chatbot Agent v2", what: "A conversational testing agent re-architected for background task execution, asynchronous tool calling, and MCP tooling.", tags: ["Agents", "Async", "MCP"], metric: "" },
+        { name: "Tosca On-Prem Agent", what: "A standardized, reusable agent framework any Tricentis product can adopt out of the box.", tags: ["Framework", "Agents"], metric: "" },
+      ] },
+    { logoSlot: "logo-walmart", n: "02", mono: "W", name: "Walmart", meta: "Senior Machine Learning Engineer · 2024–2026 · Bentonville, AR",
+      blurb: "Built the GenAI backbone of Walmart Finance's Command Center — the platform its leadership uses to run, watch, and trust its data operations.",
+      projects: [
+        { name: "Touchless", what: "Finance teams describe a report or pipeline in plain English; a visual builder and an MCP agent turn it into a running, monitored workflow.", tags: ["MCP", "React Flow", "FastAPI", "GPT-4o"], metric: "−80% authoring" },
+        { name: "Flow Monitoring Agent", what: "An MCP-orchestrated multi-agent that watches every workflow, diagnoses failures, finds the root cause, and recommends the fix — self-serve, up to the CEO's office.", tags: ["Multi-agent", "MCP", "Root-cause"], metric: "" },
+        { name: "Anomaly as a Platform", what: "Anomaly detection offered as a service — seasonality-aware, deployable on WCNP or GCP, with a shared UI, so no team rebuilds it twice.", tags: ["Anomaly", "Seasonality", "Platform"], metric: "" },
+        { name: "OAE Month-End Close", what: "Automated validation for the Omni Allocation Engine — dynamic thresholds catching granular month-over-month errors humans missed.", tags: ["Anomaly", "Finance"], metric: "$15M / mo" },
+        { name: "Text-to-SQL · Finance Data Factory", what: "Natural-language analytics with generated SQL and a plain-language account of what it did — turnaround from weeks to minutes.", tags: ["Text-to-SQL", "RAG", "GPT-4o"], metric: "wks → mins" },
+        { name: "Command Center", what: "The control plane itself: one hub for pipeline visibility, SLA monitoring, and downstream impact analysis across the finance data fabric.", tags: ["Monitoring", "SLAs"], metric: "" },
+      ] },
+    { logoSlot: "logo-cortal", n: "03", mono: "CI", name: "Cortal Insight", meta: "Founding Engineer (Co-Founder) · 2023–2024 · Austin, TX",
+      blurb: "Data quality for the robotics era — helping teams trust the images their models learn from.",
+      projects: [
+        { name: "RAG Image-Quality Pipeline", what: "Retrieval-augmented image-quality assessment for robotics datasets.", tags: ["RAG", "Computer vision"], metric: "+30% / +25%" },
+        { name: "Data-Quality Pipelines", what: "CLI-driven pipelines processing hundreds of GBs of Parquet, enabling customer self-serve at scale.", tags: ["Data", "Parquet"], metric: "" },
+      ] },
+    { logoSlot: "logo-visa", n: "04", mono: "V", name: "Visa", meta: "Senior Software Engineer · 2022–2024 · Austin, TX",
+      blurb: "Fraud and knowledge, both at Visa's scale — one measured in milliseconds, the other in productivity.",
+      projects: [
+        { name: "Deep Authorization", what: "Real-time fraud scoring on every transaction in under ten milliseconds — covered in Visa's public press release.", tags: ["Fraud", "Real-time", "Ranking"], metric: "~$40B saved" },
+        { name: "Visa GPT", what: "An internal RAG assistant over Visa's knowledge base — shipped in three months, one of Visa's fastest AI projects.", tags: ["RAG", "Search"], metric: "+13% productivity" },
+      ] },
+    { logoSlot: "logo-opnbx", n: "05", mono: "O", name: "Opnbx.ai", meta: "Founding Engineer & CTO · 2021–2022 · Remote",
+      blurb: "My first founder chapter — the technical backbone of an AI-driven sales platform, from call scheduling to deal-closing intelligence.",
+      projects: [
+        { name: "Sentiment-to-Sales Model", what: "A statistical customer-sentiment model wired into the sales flow — and shipped via an MLOps CI/CD pipeline, staging through production.", tags: ["ML", "MLOps", "Sentiment"], metric: "10% → 45% close rate" },
+        { name: "Call Orchestration Services", what: "Microservices for scheduling inbound/outbound calls, async user tasks, and session storage — Java, Spring Boot, Hadoop.", tags: ["Microservices", "Spring Boot"], metric: "" },
+      ] },
+    { logoSlot: "logo-schnackel", n: "06", mono: "S", name: "Schnackel Engineers", meta: "Software Engineer · 2021–2022 · Omaha, NE",
+      blurb: "Before the AI — geometry and optimization applied to the physical world.",
+      projects: [
+        { name: "3D Path Optimization", what: "Shortest-path routing with obstacle avoidance in 3-D space, built on convex hulls and linear programming.", tags: ["Optimization", "LP", "Geometry"], metric: "−58% cost" },
+        { name: "3-D Modeling Backend", what: "Scalable Java / Spring Boot services with Hadoop-processed architectural data — beating original drawings.", tags: ["Java", "Hadoop"], metric: "+67% vs. drawings" },
+      ] },
+    { logoSlot: "logo-infosys", n: "07", mono: "In", name: "Infosys", meta: "Software Developer · 2018–2019 · Mysore, India",
+      blurb: "Where it started — full-stack engineering and the discipline of doing it properly.",
+      projects: [
+        { name: "Student Management System", what: "RESTful Spring Boot backend, AngularJS front-end, and tuned SQL for intern project assignment.", tags: ["Spring Boot", "AngularJS", "SQL"], metric: "+30% efficiency" },
+      ] },
+    { logoSlot: "logo-coinally", n: "08", mono: "C", name: "Coinally", meta: "Full Stack Developer · 2018 · New Delhi, India",
+      blurb: "Real-time crypto trading — where I first learned that latency is a feature.",
+      projects: [
+        { name: "Low-Latency Trading", what: "Cut buy/sell response time from 1.56s to 0.89s with Node.js and REST APIs — and the user base followed.", tags: ["Node.js", "REST"], metric: "+750% users" },
+        { name: "Exchange Integrations", what: "Integrated Binance and Bittrex into one dashboard for real-time currency values.", tags: ["Integrations"], metric: "" },
+      ] },
+  ],
+  sideProjects: [
+    { name: "Test the Tongue", tag: "Computer vision", what: "Bio-medical image analysis that screens for disease from tongue photographs — GMM and K-means segmentation with frequency-domain sharpening, then feature extraction and classification, over a 1,000-image dataset.", href: "https://github.com/ushukkla/Test-The-Tongue" },
+    { name: "Bench Automation Computer", tag: "IoT · Raspberry Pi", what: "A portable Raspberry Pi automation computer — controls appliances, runs USB-camera video surveillance, and reads temperature and humidity from a Tkinter touchscreen and your phone. Published in a Springer volume.", href: "https://github.com/ushukkla/BenchAutomationComputer" },
+  ],
+  achievements: [
+    { title: "ACM-ICPC 2019", detail: "Led a team of 3 — 18th at the North America Finals." },
+    { title: "Google Summer of Code 2017", detail: "Python Software Foundation." },
+    { title: "Autonomous Vehicle Challenge 2020", detail: "1st place, University at Buffalo — led a team of 5." },
+    { title: "NeurIPS 2020 Fellowship", detail: "Top-10 in the MineRL competition (CMU)." },
+  ],
+  skills: [
+    { group: "ML / DL", items: "PyTorch, JAX, Hugging Face Transformers, classical ML, anomaly detection, ranking & recommendation, time-series, computer vision, A/B experimentation" },
+    { group: "GenAI / Agents", items: "RAG, LLM agents, multi-agent systems, MCP, LangChain, LangGraph, LoRA / PEFT fine-tuning, prompt engineering, structured outputs, guardrails, evals (RAGAs, LangSmith)" },
+    { group: "Models / APIs", items: "Claude (Anthropic API), OpenAI (GPT-4o), Gemini / Vertex AI, LLM gateways, embeddings & semantic search" },
+    { group: "Data / Infra", items: "Kafka, Spark / PySpark, BigQuery, Parquet, Milvus, Chroma, FAISS, MySQL, Kubernetes, Docker, Jenkins CI/CD, AWS SageMaker, FastAPI" },
+    { group: "Languages", items: "Python, C++, C" },
+  ],
+  posts: [
+    { id: "who-is-flying-the-plane", title: "Who Is Flying the Plane?", date: "2026 · 07", read: "9 min", excerpt: "Air France 447, cognitive debt, and the friction we keep paying to remove. What we lose when the machine works perfectly and hands us back the controls — and why somebody still has to remember how to fly.", body: [
+      "On the night of 1 June 2009, somewhere over the Atlantic, three small tubes on the nose of an Airbus A330 iced over.",
+      "That's it. That's the whole malfunction. The pitot tubes couldn't read airspeed, so the autopilot did the honest thing: it switched itself off and handed the aeroplane back to the men who were being paid to fly it.",
+      "They had it for four minutes. In that time, Air France 447 climbed, stalled, and fell thirty-eight thousand feet into the sea. Two hundred and twenty-eight people died. The ice cleared within a minute. The machine was fine.",
+      "What had degraded was the pilots.",
+      "This is the shape of the thing I want to talk about. Not the horror-movie version where the machine turns on us. The quieter one, where the machine works perfectly, hands us back the controls, and we discover we've forgotten how.",
+      "## Cognitive debt",
+      "Last June, researchers at the MIT Media Lab wired up fifty-four people and had them write essays — some with ChatGPT, some with a search engine, some with nothing but their own heads. The brain-only group lit up: wide, distributed neural networks. The ChatGPT group showed the weakest connectivity of the three, remembered less of what they'd “written,” and reported little sense of ownership over it. By the third session, many were simply pasting the prompt in and pasting the answer out. Two English teachers, not told which was which, described those essays with a single word: soulless.",
+      "The authors call it cognitive debt. I like that phrase because debt is not a wound. It's a deal. You get something now and pay later, and the paying-later feels, at the moment of borrowing, like an abstraction.",
+      "It's one preprint, fifty-four people, one task. Don't build a religion on it. But it sits on top of something much older and much better established.",
+      "Back in 2015, Fisher, Goddu and Keil ran nine experiments at Yale and found that people who looked something up online afterwards rated their own internal understanding as higher — not their access to information, their personal knowledge. Ask them how a zipper works and they feel they know. They don't. They know where to look. The mind, it turns out, is very bad at telling the difference between a thing it knows and a thing it can reach.",
+      "Here is the part that should make the hair stand up: the effect showed up even when the search failed.",
+      "We are not becoming stupider. We are becoming stupider while feeling smarter, which is a categorically worse position, because the first is a problem and the second is a problem that hides.",
+      "## The friction was the point",
+      "Ask any teacher what makes something stick and you'll get the same answer: struggle. Robert Bjork spent a career on this and gave it a name — desirable difficulties. Material that comes easily is forgotten easily. Retrieval, effort, the humiliating pause where you can't remember and have to reconstruct — that pause is not an obstacle to learning. That pause is the learning.",
+      "Now notice what every product in your life is engineered to do.",
+      "Eliminate the pause.",
+      "This is why “AI makes me more productive” and “AI is degrading me” are not contradictory claims. They're the same claim. The tool removes friction. The friction was the mechanism. You are getting exactly what you paid for, and the price is coming out of an account you can't see.",
+      "## The assessment mindset",
+      "It gets stranger when it reaches love.",
+      "By 2017, meeting online had become the single most common way American couples found each other. Not a fringe. The default. And in a long review of the psychological evidence, Eli Finkel and his colleagues put their finger on the mechanism that nobody wants to hear: browsing profiles induces an assessment mindset. You're not meeting a person. You're evaluating inventory. Height, income, jawline, filter. And a mind in assessment mode does something predictable — it keeps assessing. Commitment starts to feel like a failure to optimise.",
+      "There is always a better option. There is always a better option, because the deck is infinite by design. So we swipe with the diligence of a fund manager, and we end up lonely with excellent taste.",
+      "Byung-Chul Han says something harder. Love, he argues, requires the Other — someone genuinely outside you, who can wound you, who cannot be predicted. What the algorithm delivers instead is the Same: matched to your preferences, filtered to your revealed tastes, pre-approved. A mirror with a face. And you cannot fall in love with a mirror. You can only fall into it.",
+      "## The exhibited self",
+      "“The present age is essentially a sensible age, devoid of passion... it changes the expression of strength into a feat of dialectics.”",
+      "Kierkegaard. 1846. He was complaining about newspapers. He watched a public form — a phantom, he called it, a crowd that is nobody — and he watched people begin to perform for it instead of living, gossiping about action rather than acting. He predicted the timeline with a hundred and seventy years to spare, and the only thing he got wrong was the scale.",
+      "Sartre named the sensation: the Look. The moment you realise you are being seen, you stop being a subject and become an object — a thing with a shape, seen from outside. He thought this happened occasionally, in doorways, through keyholes.",
+      "We built a machine that does it continuously, and we hold it eight inches from our faces.",
+      "But here's the fact I'd put in bold if I only had one. In 2018, economists paid roughly 2,700 people to deactivate Facebook for four weeks. First, they asked what it was worth: most wanted around a hundred dollars to give it up for a month. The ones who actually quit came out the other side with higher life satisfaction, more time with family, less political polarisation — and afterwards, they used Facebook less and valued it lower than before.",
+      "Read that again. They didn't know what it was worth until it was gone, and it was worth less than they thought. We are not addicted to something wonderful. We are addicted to something we systematically overprice, and the overpricing is not a rumour, it's measured. Herbert Simon saw it coming in 1971: information is not the scarce thing. Attention is. A wealth of one creates a poverty of the other.",
+      "## The honest part",
+      "Now the part the doom-merchants leave out, because it's inconvenient and I'd rather be useful than dramatic.",
+      "The claim that phones caused a mental-health collapse is contested. Serious researchers — Candice Odgers among them — have pointed out that most of the evidence is correlational, the effect sizes are small, and the causal story is far weaker than the bestseller lists suggest. It might be true. It isn't established.",
+      "I don't think it matters much, because the argument doesn't need it. The case isn't that these tools make us ill. The case is that they make us thin.",
+      "Thin: capable of retrieving anything and understanding nothing. Fluent and unoriginal. Surrounded and unaccompanied. Endlessly assessing, never choosing. Very well informed about a world we are no longer in.",
+      "## The controls",
+      "I'm not going to tell you to delete anything. Detoxes are a genre, and genres are lies with a marketing budget.",
+      "I'll tell you what the pilots needed, which is the only thing that has ever worked: hours on the stick. Not fewer machines. More flying.",
+      "So: think a thought all the way through before you ask anything to help you. Sit in the pause. Let the name you're groping for stay lost for an hour — it will come back, and when it does it will be yours. Read the long thing. Meet the person who is not your type. Be bad at something in public, unassisted, where it costs you.",
+      "Simone Weil said attention, absolutely unmixed, is the rarest and purest form of generosity. She meant it as an ethic. It has become, without anybody voting on it, a form of resistance.",
+      "The autopilot is very good now. It will be better next year.",
+      "Somebody has to remember how to fly."
+    ]},
+    { id: "the-well-organized-nothing", title: "The Well-Organized Nothing", date: "2026 · 07", read: "8 min", excerpt: "A man with a perfect system who hasn't made anything in four years. On productivity culture as a factory for camels — loss aversion, Goodhart's law, and the difference between discipline that has an owner and discipline that ate one.", body: [
+      "I know a man with a perfect system.",
+      "Five a.m. Cold shower. Protein number. Eleven thousand notes, tagged, linked, backed up twice. He has never missed a day. He has a dashboard that tells him, in green, that he is winning.",
+      "He hasn't made anything in four years.",
+      "He isn't lazy. That's the horror of it. He's a monument to effort. He took every gram of will he had and poured it into the machinery of preparation, and the machinery did what machinery does. It ran. Beautifully. Producing nothing but its own motion.",
+      "Most of us are him.",
+      "## The camel kneels",
+      "Nietzsche said the spirit has three metamorphoses.",
+      "First it becomes a camel. It kneels down and asks to be loaded, because carrying heavy things is how the weak prove they're strong. Then it becomes a lion, whose only holy word is No. The lion can't create yet, but it can kill the “thou shalt.” Only after that comes the child: forgetting, innocence, a sacred Yes.",
+      "Productivity culture is a factory for camels.",
+      "It's very good at getting you to kneel. It has an entire literature devoted to teaching you to ask for more weight — one more habit, one more protocol, one more optimization of the sleep you're having in order to be better at the work you aren't doing.",
+      "And it is completely silent on the lion. It never teaches you to say No. It can't. Its whole economy depends on your next Yes.",
+      "A civilization of camels with excellent posture. Very disciplined. Not one of them dangerous.",
+      "## We answer the easier question",
+      "Kahneman noticed that when a hard question is put to us, we don't answer it. We quietly swap it for an easy one and answer that instead, and we never notice the swap.",
+      "The hard question, for anyone who makes anything, is: is this good?",
+      "It has no metric. No dashboard. It requires taste, taste takes years, and it will humiliate you regularly.",
+      "The easy question is: did I do the reps?",
+      "So the swap gets made. Not cynically — nobody notices, that's the point. The streak is green, the word count is met, the commit graph is a wall of little squares, and the thing at the center of all that activity is mediocre in a way no system will ever tell you about. Because no system can. You can't measure taste, so you measure motion. Then you feel the motion as taste.",
+      "Goodhart said a measure that becomes a target stops being a measure. He was talking about central banks. Nobody warned us a single human being could do it to himself, hit every target he set, hollow out the thing the targets were pointing at, and call the hollowing discipline.",
+      "## The streak is a hostage situation",
+      "Losing hurts about twice as much as winning feels good. That's the most reliable finding in the whole literature on how people actually behave, and the productivity industry has weaponized it.",
+      "The streak. The chain you mustn't break. The little flame.",
+      "Day sixty. You sit down tired. You can make the real thing — which might fail, which might take three days before it's worth anything, which might produce nothing visible today — or you can do the cheap version, the safe version, the one that's definitely finishable in forty minutes.",
+      "You'll keep the flame alive. Of course you will. Sixty days are sitting on the other side of the scale.",
+      "And there it is. Loss aversion turns creation into insurance. You're not making anymore. You're protecting an asset. You're a man guarding a candle in a wind, and you will not walk into the dark room where the interesting things are, because it's windy in there.",
+      "## The blank page isn't a problem to be solved",
+      "Sartre's waiter is too eager. Too crisp with the tray, too precise with the bow. He is playing at being a waiter, and he's doing it because being simply a man — free, undefined, responsible — is unbearable. So he hides inside a function.",
+      "Watch the productivity guy. The template. The morning stack. The identity: I'm someone who ships.",
+      "Too crisp with the tray.",
+      "He's fleeing what the waiter is fleeing. The dread you feel at the blank page is not a defect in your workflow. It's the honest experience of being free. Nothing tells you what to make. Nothing promises it'll be good. Nothing will absolve you afterward.",
+      "A system is a way of handing that sentence back. If the system decided, I didn't decide. If the framework failed, I didn't fail. We don't build scaffolds because we can't work without them. We build them because a scaffold is somewhere to hide.",
+      "And Schopenhauer, who thought life was a pendulum between wanting and boredom, found exactly one crack in the wall: the moment you look at something without wanting anything from it. The will goes quiet. That's where art comes from. Not from striving — from striving briefly stopping.",
+      "Now count the un-optimized minutes in your day. There are none. Every gap is a leak, every idle hour an inefficiency with an app to plug it.",
+      "Ask any maker where the idea came from and they'll admit it, sheepishly, like a crime. The shower. The walk. The dead hour. It came when they stopped trying.",
+      "We eliminated the only conditions under which the thing can happen, in order to get more of the thing.",
+      "## The things you build end up building you",
+      "Tyler Durden says self-improvement is masturbation. He's right, and for a more precise reason than he lets on: both perfectly simulate the shape of the real act while guaranteeing nothing is created and nobody is risked.",
+      "He also says the things you own end up owning you. Carve that above the desk. You start by using a system to make things. You end by making things to feed the system. The tail wags, the dog complies, the dashboard stays green.",
+      "This is where robot stops being a metaphor. A robot isn't a thing made of metal. A robot is any process that executes a rule without asking what the rule is for. That's the whole definition. And a man who hasn't asked what is this for in four years, who wakes at five because the protocol says five, who ships because the streak demands it, who has outsourced every judgment to a framework designed to sell him something — he isn't a person using a machine.",
+      "He's a machine wearing a person.",
+      "## The knife and the treadmill",
+      "I'm not against discipline. That would be a stupid essay and a stupider life. Nobody made anything worth keeping on inspiration and vibes. The novel gets written by someone who sits down. The building gets redrawn eleven times. The capacity to be bored on purpose, for years, in service of something, is most of what separates people who make things from people who talk about making things.",
+      "The question was never discipline versus freedom. It's whose discipline, and for what.",
+      "Discipline with an owner is a knife. There's a vision — ugly, personal, probably indefensible — and the discipline is what you use to cut away everything that isn't it. That kind has a No in it. That's the lion.",
+      "Discipline without an owner is a treadmill. No direction, only a Yes to whatever protocol is in fashion. It optimizes toward the average, because the average is where all the measurable things live. It'll make you efficient at producing exactly what everyone else is producing, on time, beautifully formatted, and it will feel like virtue the whole way down.",
+      "One of them serves a person. The other one ate one.",
+      "Nietzsche's last man blinks and says: we have invented happiness. He has his little pleasure for the day and his little pleasure for the night, and he is careful of his health.",
+      "We didn't become him through decadence. We became him through effort.",
+      "So: break the chain. Let the flame go out and notice the sky doesn't fall — that the loss you were running from was worth about nine cents. Spend an afternoon on something that produces no output, can't be tracked, and would embarrass you on a dashboard. Sit in front of the blank thing and don't reach for the framework. That dread is the last part of you that hasn't been automated. It's trying to tell you something.",
+      "Then make something. Not something optimal. Something that couldn't have come out of any system, because it came from the one place no system reaches.",
+      "The camel carries. The lion refuses.",
+      "Only the child creates."
+    ]},
+  ],
+  books: [
+    { title: "Meditations", author: "Marcus Aurelius" },
+    { title: "The Stranger", author: "Albert Camus" },
+    { title: "The Myth of Sisyphus", author: "Albert Camus" },
+    { title: "Beyond Good and Evil", author: "Friedrich Nietzsche" },
+    { title: "Thus Spoke Zarathustra", author: "Friedrich Nietzsche" },
+    { title: "Either/Or", author: "Søren Kierkegaard" },
+    { title: "The Prince", author: "Niccolò Machiavelli" },
+    { title: "Notes from Underground", author: "Fyodor Dostoevsky" },
+    { title: "Crime and Punishment", author: "Fyodor Dostoevsky" },
+    { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky" },
+    { title: "The Old Man and the Sea", author: "Ernest Hemingway" },
+    { title: "The Count of Monte Cristo", author: "Alexandre Dumas" },
+    { title: "Great Expectations", author: "Charles Dickens" },
+    { title: "One Hundred Years of Solitude", author: "Gabriel García Márquez" },
+    { title: "The Fountainhead", author: "Ayn Rand" },
+    { title: "Dune", author: "Frank Herbert" },
+    { title: "A Game of Thrones", author: "George R. R. Martin" },
+    { title: "The Lord of the Rings", author: "J. R. R. Tolkien" },
+    { title: "The Rise of the Dragon", author: "George R. R. Martin" },
+    { title: "The Dark Knight Returns", author: "Frank Miller" },
+    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
+    { title: "Noise", author: "Daniel Kahneman" },
+    { title: "Predictably Irrational", author: "Dan Ariely" },
+    { title: "Man and His Symbols", author: "Carl G. Jung" },
+    { title: "The Interpretation of Dreams", author: "Sigmund Freud" },
+    { title: "The Power of Your Subconscious Mind", author: "Joseph Murphy" },
+    { title: "Reclaiming Conversation", author: "Sherry Turkle" },
+    { title: "All About Love", author: "bell hooks" },
+    { title: "A Short History of Nearly Everything", author: "Bill Bryson" },
+    { title: "Sapiens", author: "Yuval Noah Harari" },
+    { title: "21 Lessons for the 21st Century", author: "Yuval Noah Harari" },
+    { title: "The Beginning of Infinity", author: "David Deutsch" },
+    { title: "Guns, Germs, and Steel", author: "Jared Diamond" },
+    { title: "Gödel, Escher, Bach", author: "Douglas Hofstadter" },
+    { title: "Surely You're Joking, Mr. Feynman!", author: "Richard P. Feynman" },
+    { title: "The Tao of Physics", author: "Fritjof Capra" },
+    { title: "The Black Swan", author: "Nassim Nicholas Taleb" },
+    { title: "Outliers", author: "Malcolm Gladwell" },
+    { title: "The 7 Habits of Highly Effective People", author: "Stephen R. Covey" },
+    { title: "The Almanack of Naval Ravikant", author: "Eric Jorgenson" },
+    { title: "Discover Your Destiny", author: "Robin Sharma" },
+    { title: "The 48 Laws of Power", author: "Robert Greene" },
+    { title: "The Psychology of Money", author: "Morgan Housel" },
+    { title: "The Warren Buffett Way", author: "Robert G. Hagstrom" },
+    { title: "The Art of Strategy", author: "Avinash K. Dixit & Barry J. Nalebuff" },
+    { title: "The Art of War", author: "Sun Tzu" },
+    { title: "Free to Choose", author: "Milton & Rose Friedman" },
+    { title: "The Creative Act", author: "Rick Rubin" },
+    { title: "Tools of Titans", author: "Tim Ferriss" },
+    { title: "The Myth of Excellence", author: "Fred Crawford & Ryan Mathews" },
+    { title: "HBR Guide to Persuasive Presentations", author: "Nancy Duarte" },
+    { title: "The Clockwork Muse", author: "Eviatar Zerubavel" },
+    { title: "Cracking the Coding Interview", author: "Gayle Laakmann McDowell" },
+    { title: "Steve Jobs", author: "Walter Isaacson" },
+    { title: "The Rig Veda", author: "" },
+    { title: "Garuda Purana", author: "B. K. Chaturvedi" },
+    { title: "Indian Philosophy", author: "S. Radhakrishnan" },
+    { title: "Breaking India", author: "Rajiv Malhotra & Aravindan Neelakandan" },
+    { title: "The South African Gandhi", author: "Ashwin Desai & Goolam Vahed" },
+    { title: "Yoga Self-Taught", author: "André Van Lysebeth" },
+    { title: "What Great Paintings Say", author: "Rose-Marie & Rainer Hagen" },
+  ],
+  photos: [
+    { file: "photos/photo-01.jpg", caption: "№ 01" },
+    { file: "photos/photo-02.jpg", caption: "№ 02" },
+    { file: "photos/photo-03.jpg", caption: "№ 03" },
+    { file: "photos/photo-04.jpg", caption: "№ 04" },
+    { file: "photos/photo-05.jpg", caption: "№ 05" },
+    { file: "photos/photo-06.jpg", caption: "№ 06" },
+    { file: "photos/photo-07.jpg", caption: "№ 07" },
+    { file: "photos/photo-08.jpg", caption: "№ 08" },
+    { file: "photos/photo-09.jpg", caption: "№ 09" },
+    { file: "photos/photo-10.jpg", caption: "№ 10" },
+  ],
+  featured: [
+    { num: "01", title: "Visa Deep Authorization", sub: "Real-time fraud scoring under 10ms — ~$40B in estimated savings.", tag: "Visa" },
+    { num: "02", title: "Touchless", sub: "Text-to-workflow GenAI for finance — authoring time cut 80%.", tag: "Walmart" },
+    { num: "03", title: "Ascend AI", sub: "No-code platform to build tailored AI assistants from your own data.", tag: "Founder" },
+  ],
+};
+
+/* ---------------- STATE ---------------- */
+let state = { page: "home", post: null, li: 0, ti: 0 };
+let lineTimer = null, triviaTimer = null;
+
+/* ---------------- HELPERS ---------------- */
+function slot(placeholder){
+  return '<div class="img-slot"><span>' + (placeholder || "") + "</span></div>";
+}
+
+function navHTML(){
+  const items = DATA.nav.map(function(n){
+    const active = state.page === n.key;
+    const st = "background:none;border:none;cursor:pointer;padding:0;font-family:'Helvetica Neue',Arial,sans-serif;font-size:13px;letter-spacing:.01em;" +
+      (active ? "font-weight:700;color:#e8500f" : "font-weight:500;color:rgba(0,0,0,.5)");
+    return '<button data-nav="' + n.key + '" style="' + st + '">' + n.label + "</button>";
+  }).join("");
+  return '' +
+  '<nav style="position:sticky;top:0;z-index:20;background:rgba(244,242,238,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.14);display:flex;align-items:center;gap:14px 20px;padding:16px 40px">' +
+    '<button class="nav-toggle" data-action="toggleMenu" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
+    '<div class="nav-links" style="display:flex;flex-wrap:wrap;align-items:center;gap:22px;flex:1 1 auto;min-width:0">' + items + "</div>" +
+    '<a href="' + RESUME_MAILTO + '" class="nav-cta" data-h="background:#e8500f;color:#fff;border-color:#e8500f" style="flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;border:1.5px solid #111;padding:7px 12px;font-size:12px;font-weight:600">Résumé <span style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;opacity:.6">→</span></a>' +
+  "</nav>";
+}
+
+function footerHTML(){
+  return '' +
+  '<footer style="border-top:1px solid rgba(0,0,0,.14);padding:26px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5)">' +
+    "<span>© 2026 Utkarsh Shukla</span>" +
+    '<span style="display:flex;gap:18px">' +
+      '<a href="mailto:shuklautkarsh.u16@gmail.com">Email</a>' +
+      '<a href="https://www.linkedin.com/in/utkarshcs/" target="_blank" rel="noopener">LinkedIn</a>' +
+      '<a href="https://x.com/ushukkk" target="_blank" rel="noopener">X</a>' +
+      '<a href="https://github.com/ushukkla" target="_blank" rel="noopener">GitHub</a>' +
+    "</span>" +
+    "<span>Less, but better.</span>" +
+  "</footer>";
+}
+
+/* ---------------- PAGES ---------------- */
+function pageHome(){
+  const featured = DATA.featured.map(function(f){
+    return '<button data-nav="work" class="r-featured" data-h="opacity:.6" style="width:100%;text-align:left;background:none;border:none;border-bottom:1px solid rgba(0,0,0,.14);cursor:pointer;padding:18px 0;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:baseline;font-family:\'Helvetica Neue\',Arial,sans-serif">' +
+      '<span><span style="font-size:22px;font-weight:600;letter-spacing:-.01em">' + f.title + '</span><span style="display:block;font-size:13px;color:rgba(0,0,0,.55);margin-top:4px">' + f.sub + "</span></span>" +
+      '<span class="r-tag" style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:rgba(0,0,0,.4)">' + f.tag + "</span>" +
+      "</button>";
+  }).join("");
+
+  return '' +
+  '<main style="animation:fadeIn .5s ease both">' +
+    '<div class="r-hero" style="display:grid;grid-template-columns:1.35fr .9fr;gap:48px;padding:56px 40px 34px;align-items:start">' +
+      '<div style="font-family:\'Archivo\',sans-serif">' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45);margin-bottom:22px">Senior AI Engineer · Austin, TX</div>' +
+        '<div class="r-h1" style="font-size:76px;line-height:.95;font-weight:800;letter-spacing:-.038em">I make AI that actually ships.</div>' +
+        '<div style="max-width:460px;margin-top:28px;font-family:\'Newsreader\',serif;font-size:19px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">I\'m Utkarsh — a Senior AI Engineer in Austin. For seven years I\'ve built the unglamorous parts of applied ML: fraud models that decide in ten milliseconds, agent frameworks, and tools that let non-engineers do engineering.</div>' +
+        '<div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:30px">' +
+          '<button data-nav="work" data-h="background:#e8500f" style="background:#111;color:#f4f2ee;border:none;cursor:pointer;padding:13px 20px;font-size:13px;font-weight:600;font-family:\'Helvetica Neue\',Arial,sans-serif">See the work →</button>' +
+          '<button data-nav="contact" data-h="background:#e8500f;color:#fff;border-color:#e8500f" style="background:none;color:#111;border:1.5px solid #111;cursor:pointer;padding:13px 20px;font-size:13px;font-weight:600;font-family:\'Helvetica Neue\',Arial,sans-serif">Get in touch</button>' +
+        "</div>" +
+      "</div>" +
+      '<div style="display:flex;flex-direction:column">' +
+        '<div class="r-portrait" style="width:100%;height:384px;overflow:hidden;background:#e4e1da"><img src="assets/portrait.jpg" alt="Utkarsh Shukla" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;filter:grayscale(1) contrast(1.02);display:block"></div>' +
+      "</div>" +
+    "</div>" +
+
+    '<div class="r-pad" style="padding:44px 40px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid #111;padding-bottom:12px;margin-bottom:6px">' +
+        '<div style="font-size:13px;font-weight:600;letter-spacing:.02em">Selected work</div>' +
+        '<button data-nav="work" data-h="color:#111" style="background:none;border:none;cursor:pointer;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5)">All work ↗</button>' +
+      "</div>" + featured +
+    "</div>" +
+  "</main>";
+}
+
+const BRAND = {
+  "logo-walmart":   { bg: "#0071CE", fg: "#FFC220" },
+  "logo-tricentis": { bg: "#0E8F5E", fg: "#ffffff" },
+  "logo-visa":      { bg: "#1A1F71", fg: "#F7B600" },
+  "logo-cortal":    { bg: "#0F766E", fg: "#ffffff" },
+  "logo-opnbx":     { bg: "#6D28D9", fg: "#ffffff" },
+  "logo-schnackel": { bg: "#334155", fg: "#ffffff" },
+  "logo-coinally":  { bg: "#D97706", fg: "#ffffff" },
+  "logo-infosys":   { bg: "#007CC3", fg: "#ffffff" },
+};
+const LOGO_DOMAIN = {
+  "logo-walmart":   "walmart.com",
+  "logo-tricentis": "tricentis.com",
+  "logo-visa":      "visa.com",
+  "logo-cortal":    "cortalinsight.com",
+  "logo-opnbx":     "opnbx.ai",
+  "logo-schnackel": "schnackel.com",
+  "logo-coinally":  "coinally.com",
+  "logo-infosys":   "infosys.com",
+};
+const LOGO_FILE = {
+  "logo-walmart":   "Logos/free-walmart-logo-symbol-blue-circle-round-icon-25629-thumb.png",
+  "logo-visa":      "Logos/VISA-logo.png",
+  "logo-infosys":   "Logos/infosys-limited-vector-logo-11574259008tncnrnxj7c.png",
+  "logo-schnackel": "Logos/LTW1USNw_400x400.jpg",
+  "logo-tricentis": "Logos/dsTtT9sD_400x400.png",
+  "logo-cortal":    "Logos/4NOYRqPotjRgRd4DkeuPxlFpVlY.png",
+};
+
+function pageWork(){
+  const companies = DATA.companies.map(function(co){
+    const brand = BRAND[co.logoSlot] || { bg: "#111", fg: "#f4f2ee" };
+    const dom = LOGO_DOMAIN[co.logoSlot];
+    const logoFile = LOGO_FILE[co.logoSlot];
+    const logoImg = logoFile
+      ? '<img src="' + encodeURI(logoFile) + '" alt="' + co.name + ' logo" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:9px;z-index:1">'
+      : (dom ? '<img src="https://logo.clearbit.com/' + dom + '?size=128" alt="' + co.name + ' logo" loading="lazy" onerror="this.remove()" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:9px;z-index:1">' : "");
+    const projects = co.projects.map(function(p){
+      const tags = p.tags.map(function(t){
+        return '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:rgba(0,0,0,.55);border:1px solid rgba(0,0,0,.18);padding:2px 7px">' + t + "</span>";
+      }).join("");
+      const metric = p.metric ? '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;font-weight:600;white-space:nowrap;color:#e8500f">' + p.metric + "</span>" : "";
+      return '<div data-h="border-color:#e8500f" style="border:1px solid rgba(0,0,0,.16);padding:18px 18px 15px;display:flex;flex-direction:column;gap:9px;background:#faf9f6">' +
+        '<div style="font-size:16px;font-weight:700;letter-spacing:-.01em;line-height:1.2">' + p.name + "</div>" +
+        '<div style="font-family:\'Newsreader\',serif;font-size:15px;line-height:1.5;color:rgba(0,0,0,.72);flex:1">' + p.what + "</div>" +
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px">' +
+          '<div style="display:flex;flex-wrap:wrap;gap:5px">' + tags + "</div>" + metric +
+        "</div></div>";
+    }).join("");
+    return '' +
+    '<div style="padding:40px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
+      '<div class="r-chapterhd" style="display:grid;grid-template-columns:72px 1fr;gap:28px;align-items:start">' +
+        '<div style="position:relative;width:72px;height:72px;border:1.5px solid #111;background:' + brand.bg + ';overflow:hidden">' +
+          '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:\'Archivo\',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;color:' + brand.fg + ';z-index:0">' + co.mono + "</div>" +
+          logoImg +
+          '<span style="position:absolute;right:-1.5px;bottom:-1.5px;width:12px;height:12px;background:#e8500f;z-index:3;pointer-events:none"></span>' +
+        "</div>" +
+        "<div>" +
+          '<div style="display:flex;align-items:baseline;gap:12px"><span style="font-family:\'Archivo\',sans-serif;font-size:34px;font-weight:800;letter-spacing:-.028em;line-height:1">' + co.name + "</span></div>" +
+          '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5);margin-top:9px;letter-spacing:.02em">' + co.meta + "</div>" +
+          '<div style="font-family:\'Newsreader\',serif;font-size:17px;line-height:1.5;color:rgba(0,0,0,.7);font-weight:300;margin-top:12px;max-width:620px">' + co.blurb + "</div>" +
+        "</div>" +
+      "</div>" +
+      '<div class="r-projgrid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;margin-left:100px">' + projects + "</div>" +
+    "</div>";
+  }).join("");
+
+  const skills = DATA.skills.map(function(s){
+    return '<div class="r-2col" style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:rgba(0,0,0,.55);letter-spacing:.02em">' + s.group + "</div>" +
+      '<div style="font-size:15px;line-height:1.6;color:rgba(0,0,0,.82)">' + s.items + "</div></div>";
+  }).join("");
+
+  const side = DATA.sideProjects.map(function(sp){
+    return '<a href="' + sp.href + '" target="_blank" rel="noopener" data-h="border-color:#e8500f" style="border:1px solid rgba(0,0,0,.16);padding:20px;display:flex;flex-direction:column;gap:8px;background:#faf9f6;color:#111">' +
+      '<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:18px;font-weight:700;letter-spacing:-.01em">' + sp.name + '</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:10px;color:rgba(0,0,0,.5);border:1px solid rgba(0,0,0,.18);padding:2px 7px">' + sp.tag + "</span></div>" +
+      '<div style="font-family:\'Newsreader\',serif;font-size:15px;line-height:1.5;color:rgba(0,0,0,.72)">' + sp.what + "</div>" +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:#e8500f;margin-top:2px">Visit ↗</div></a>';
+  }).join("");
+
+  const ach = DATA.achievements.map(function(a){
+    return '<div style="display:grid;grid-template-columns:14px 1fr;gap:12px;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.14);align-items:start">' +
+      '<span style="width:9px;height:9px;background:#e8500f;margin-top:7px"></span>' +
+      '<div><div style="font-size:16px;font-weight:600;letter-spacing:-.01em">' + a.title + '</div><div style="font-family:\'Newsreader\',serif;font-size:15px;line-height:1.45;color:rgba(0,0,0,.65);margin-top:2px">' + a.detail + "</div></div></div>";
+  }).join("");
+
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Work</div>' +
+    '<div class="r-h1-sm" style="font-family:\'Archivo\',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1;margin-top:16px">Seven years,<br>built to last.</div>' +
+    '<div style="max-width:560px;margin-top:22px;font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">A career spent on the parts of machine learning that have to survive contact with production — fraud at scale, agent systems, and platforms that put engineering in the hands of people who aren\'t engineers.</div>' +
+
+    '<div style="margin-top:48px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px;display:flex;justify-content:space-between;align-items:baseline"><span>Where I\'ve built</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45);font-weight:400">latest first</span></div>' +
+      companies +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px;display:flex;justify-content:space-between;align-items:baseline"><span>On my own</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45);font-weight:400">founder</span></div>' +
+    "</div>" +
+
+    '<div class="r-founder" style="margin-top:20px;background:#111;color:#f4f2ee;padding:38px 40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start">' +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap">Founder<br>2023 —</div>' +
+      "<div>" +
+        '<div style="font-family:\'Archivo\',sans-serif;font-size:30px;font-weight:800;letter-spacing:-.02em">Ascend AI</div>' +
+        '<div style="font-family:\'Newsreader\',serif;font-size:19px;line-height:1.55;font-weight:300;margin-top:12px;max-width:640px">A no-code GenAI platform that lets any business build tailored AI assistants from its own data — retrieval-augmented, grounded in a Milvus vector store, and kept honest with policy controls. Founded it, built it, still running it.</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">RAG</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">Milvus</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">Policy controls</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">No-code</span>' +
+        "</div>" +
+      "</div>" +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px">What I work with</div>' + skills +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px">Education</div>' +
+      '<div class="r-2col" style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5)">2019 — 2021</div>' +
+        '<div><div style="font-size:18px;font-weight:600">M.S., Computer Science <span style="font-weight:400;color:rgba(0,0,0,.5);font-size:14px">(Thesis · GPA 3.72)</span></div><div style="font-size:14px;color:rgba(0,0,0,.55);margin-top:2px">University at Buffalo, SUNY</div></div>' +
+      "</div>" +
+      '<div class="r-2col" style="display:grid;grid-template-columns:180px 1fr;gap:32px;padding:18px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5)">2014 — 2018</div>' +
+        '<div><div style="font-size:18px;font-weight:600">B.Tech, Computer Science</div><div style="font-size:14px;color:rgba(0,0,0,.55);margin-top:2px">AKTU, India</div></div>' +
+      "</div>" +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px;display:flex;justify-content:space-between;align-items:baseline"><span>Things I built for fun</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45);font-weight:400">side projects</span></div>' +
+      '<div class="r-projgrid2" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:20px">' + side + "</div>" +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px">Along the way</div>' +
+      '<div class="r-projgrid2" style="display:grid;grid-template-columns:1fr 1fr;gap:0 40px">' + ach + "</div>" +
+    "</div>" +
+
+    '<div style="margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;align-items:center">' +
+      '<a href="' + RESUME_MAILTO + '" data-h="background:#333" style="display:inline-flex;align-items:center;gap:10px;background:#111;color:#f4f2ee;padding:13px 20px;font-size:13px;font-weight:600">Request the résumé <span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;opacity:.6">email →</span></a>' +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45)">Sent on request — not posted publicly.</span>' +
+    "</div>" +
+  "</main>";
+}
+
+function pageWritingIndex(){
+  const posts = DATA.posts.map(function(p){
+    return '<button data-post="' + p.id + '" data-h="opacity:.62" style="width:100%;text-align:left;background:none;border:none;border-top:1px solid rgba(0,0,0,.14);cursor:pointer;padding:26px 0;display:block;font-family:\'Helvetica Neue\',Arial,sans-serif">' +
+      '<div style="display:flex;justify-content:space-between;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45)"><span>' + p.date + "</span><span>" + p.read + "</span></div>" +
+      '<div style="font-size:28px;font-weight:700;letter-spacing:-.02em;margin-top:12px">' + p.title + "</div>" +
+      '<div style="font-family:\'Newsreader\',serif;font-size:17px;line-height:1.55;color:rgba(0,0,0,.65);margin-top:8px;max-width:680px;font-weight:300">' + p.excerpt + "</div>" +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:#111;margin-top:14px">Read →</div></button>';
+  }).join("");
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Writing</div>' +
+    '<div style="margin-top:28px">' + posts + '<div style="border-top:1px solid rgba(0,0,0,.14)"></div></div>' +
+  "</main>";
+}
+
+function pagePost(){
+  const post = DATA.posts.find(function(p){ return p.id === state.post; }) || DATA.posts[0];
+  const body = post.body.map(function(para){
+    if(para.indexOf("## ") === 0){
+      return '<h2 style="font-family:\'Archivo\',sans-serif;font-size:23px;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin:40px 0 8px">' + para.slice(3) + "</h2>";
+    }
+    return '<p style="font-family:\'Newsreader\',serif;font-size:19px;line-height:1.7;color:rgba(0,0,0,.85);font-weight:300;margin:0 0 22px">' + para + "</p>";
+  }).join("");
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both;max-width:760px">' +
+    '<button data-action="backWriting" data-h="color:#111" style="background:none;border:none;cursor:pointer;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5);padding:0;margin-bottom:30px">← All writing</button>' +
+    '<div style="display:flex;gap:16px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45)"><span>' + post.date + "</span><span>·</span><span>" + post.read + "</span></div>" +
+    '<h1 style="font-family:\'Archivo\',sans-serif;font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin:16px 0 0">' + post.title + "</h1>" +
+    '<div style="margin-top:28px">' + body + "</div>" +
+    '<div style="border-top:1.5px solid #111;margin-top:24px;padding-top:16px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5)">Utkarsh Shukla · Austin, TX</div>' +
+  "</main>";
+}
+
+const BOOK_PALETTE = [
+  { bg: "#b3402e", fg: "#f4ece2" },
+  { bg: "#1f3a34", fg: "#e8e2d2" },
+  { bg: "#24425c", fg: "#eef1f4" },
+  { bg: "#d8b24a", fg: "#2a2410" },
+  { bg: "#2b2b2b", fg: "#e9e7e2" },
+  { bg: "#7a3b2e", fg: "#f1e6da" },
+  { bg: "#3c3a5e", fg: "#ece9f4" },
+  { bg: "#5a6b52", fg: "#f0f0e6" },
+];
+
+const COVERS = {"Meditations":"Books/covers/meditations.jpg","The Stranger":"Books/covers/the-stranger.jpg","The Myth of Sisyphus":"Books/covers/the-myth-of-sisyphus.jpg","Beyond Good and Evil":"Books/covers/beyond-good-and-evil.jpg","Thus Spoke Zarathustra":"Books/covers/thus-spoke-zarathustra.jpg","Either/Or":"Books/covers/eitheror.jpg","The Prince":"Books/covers/the-prince.jpg","Notes from Underground":"Books/covers/notes-from-underground.jpg","Crime and Punishment":"Books/covers/crime-and-punishment.png","The Brothers Karamazov":"Books/covers/the-brothers-karamazov.jpg","The Old Man and the Sea":"Books/covers/the-old-man-and-the-sea.jpg","The Count of Monte Cristo":"Books/covers/the-count-of-monte-cristo.jpg","Great Expectations":"Books/covers/great-expectations.jpg","One Hundred Years of Solitude":"Books/covers/one-hundred-years-of-solitude.jpg","The Fountainhead":"Books/covers/the-fountainhead.jpg","Dune":"Books/covers/dune.jpg","A Game of Thrones":"Books/covers/a-game-of-thrones.jpg","The Lord of the Rings":"Books/covers/the-lord-of-the-rings.gif","The Rise of the Dragon":"Books/covers/the-rise-of-the-dragon.jpg","The Dark Knight Returns":"Books/covers/the-dark-knight-returns.jpg","Thinking, Fast and Slow":"Books/covers/thinking-fast-and-slow.jpg","Noise":"Books/covers/noise.jpg","Predictably Irrational":"Books/covers/predictably-irrational.jpg","Man and His Symbols":"Books/covers/man-and-his-symbols.jpg","The Interpretation of Dreams":"Books/covers/the-interpretation-of-dreams.jpg","The Power of Your Subconscious Mind":"Books/covers/the-power-of-your-subconscious-mind.jpg","Reclaiming Conversation":"Books/covers/reclaiming-conversation.jpg","All About Love":"Books/covers/all-about-love.jpg","A Short History of Nearly Everything":"Books/covers/a-short-history-of-nearly-everything.jpg","Sapiens":"Books/covers/sapiens.png","21 Lessons for the 21st Century":"Books/covers/21-lessons-for-the-21st-century.jpg","The Beginning of Infinity":"Books/covers/the-beginning-of-infinity.jpg","Guns, Germs, and Steel":"Books/covers/guns-germs-and-steel.jpg","Gödel, Escher, Bach":"Books/covers/gödel-escher-bach.jpg","Surely You're Joking, Mr. Feynman!":"Books/covers/surely-youre-joking-mr-feynman.png","The Tao of Physics":"Books/covers/the-tao-of-physics.jpg","The Black Swan":"Books/covers/the-black-swan.jpg","Outliers":"Books/covers/outliers.png","The 7 Habits of Highly Effective People":"Books/covers/the-7-habits-of-highly-effective-people.jpg","The Almanack of Naval Ravikant":"Books/covers/the-almanack-of-naval-ravikant.jpg","Discover Your Destiny":"Books/covers/discover-your-destiny.jpg","The 48 Laws of Power":"Books/covers/the-48-laws-of-power.jpg","The Psychology of Money":"Books/covers/the-psychology-of-money.jpg","The Warren Buffett Way":"Books/covers/the-warren-buffett-way.jpg","The Art of Strategy":"Books/covers/the-art-of-strategy.jpg","The Art of War":"Books/covers/the-art-of-war.jpg","Free to Choose":"Books/covers/free-to-choose.jpg","The Creative Act":"Books/covers/the-creative-act.jpg","Tools of Titans":"Books/covers/tools-of-titans.jpg","The Myth of Excellence":"Books/covers/the-myth-of-excellence.jpg","HBR Guide to Persuasive Presentations":"Books/covers/hbr-guide-to-persuasive-presentations.jpg","The Clockwork Muse":"Books/covers/the-clockwork-muse.jpg","Cracking the Coding Interview":"Books/covers/cracking-the-coding-interview.jpg","Steve Jobs":"Books/covers/steve-jobs.jpg","The Rig Veda":"Books/covers/the-rig-veda.jpg","Garuda Purana":"Books/covers/garuda-purana.jpg","Indian Philosophy":"Books/covers/indian-philosophy.jpg","Breaking India":"Books/covers/breaking-india.jpg","The South African Gandhi":"Books/covers/the-south-african-gandhi.jpg","Yoga Self-Taught":"Books/covers/yoga-self-taught.jpg","What Great Paintings Say":"Books/covers/what-great-paintings-say.jpg"};
+
+function bookCover(b, i){
+  const p = BOOK_PALETTE[i % BOOK_PALETTE.length];
+  const q = b.title + " " + b.author;
+  const local = COVERS[b.title];
+  const fallback = '<div class="bk-fallback" style="position:absolute;inset:0;background:' + p.bg + ";color:" + p.fg + ';padding:18px 16px;display:flex;flex-direction:column;justify-content:space-between;transition:opacity .4s ease">' +
+      '<div style="font-family:\'Archivo\',sans-serif;font-weight:800;font-size:18px;line-height:1.12;letter-spacing:-.02em">' + b.title + "</div>" +
+      '<div><div style="width:26px;height:3px;background:' + p.fg + ';opacity:.75;margin-bottom:9px"></div>' +
+        '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9.5px;letter-spacing:.04em;opacity:.85;line-height:1.35">' + b.author + "</div></div>" +
+    "</div>";
+  const img = local ? '<img src="' + encodeURI(local) + '" loading="lazy" alt="' + b.title.replace(/"/g, "&quot;") + ' cover" onload="var f=this.parentNode.querySelector(\'.bk-fallback\'); if(f){f.style.opacity=0;}" onerror="this.remove();" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1">' : "";
+  return '<div class="bk-cover" data-q="' + encodeURIComponent(q) + '" data-title="' + encodeURIComponent(b.title) + '" data-author="' + encodeURIComponent(b.author || "") + '"' + (local ? ' data-local="1"' : "") + ' style="position:relative;width:100%;aspect-ratio:2/3;box-shadow:0 12px 26px -18px rgba(0,0,0,.6);background:#d8d5cd;background-size:cover;background-position:center;overflow:hidden">' +
+    fallback + img +
+  "</div>";
+}
+
+function loadBookCovers(){
+  document.querySelectorAll(".bk-cover").forEach(function(el){
+    if(el.dataset.loaded) return;
+    if(el.dataset.local) return;
+    el.dataset.loaded = "1";
+    var q = decodeURIComponent(el.getAttribute("data-q"));
+    var title = decodeURIComponent(el.getAttribute("data-title") || "");
+    var author = decodeURIComponent(el.getAttribute("data-author") || "");
+
+    function apply(url){
+      var im = new Image();
+      im.onload = function(){
+        // ignore Open Library's 1x1 "no cover" placeholder
+        if(im.naturalWidth <= 2 || im.naturalHeight <= 2){ tryGoogle(); return; }
+        el.style.backgroundImage = 'url("' + url + '")';
+        var fb = el.querySelector(".bk-fallback");
+        if(fb) fb.style.opacity = "0";
+      };
+      im.onerror = function(){ tryGoogle(); };
+      im.src = url;
+    }
+
+    var googleTried = false;
+    function tryGoogle(){
+      if(googleTried) return; googleTried = true;
+      fetch("https://www.googleapis.com/books/v1/volumes?country=US&maxResults=5&q=" + encodeURIComponent(q))
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(j){
+          if(!j || !j.items) return;
+          var url = null;
+          for(var k=0;k<j.items.length;k++){
+            var links = j.items[k].volumeInfo && j.items[k].volumeInfo.imageLinks;
+            if(links){ url = links.thumbnail || links.smallThumbnail; if(url) break; }
+          }
+          if(!url) return;
+          url = url.replace(/^http:/, "https:").replace("&edge=curl", "");
+          var im = new Image();
+          im.onload = function(){
+            el.style.backgroundImage = 'url("' + url + '")';
+            var fb = el.querySelector(".bk-fallback");
+            if(fb) fb.style.opacity = "0";
+          };
+          im.src = url;
+        })
+        .catch(function(){});
+    }
+
+    // Source 1: Open Library (search -> cover id), then fall back to Google Books
+    var ol = "https://openlibrary.org/search.json?limit=1&fields=cover_i&title=" +
+      encodeURIComponent(title) + (author ? "&author=" + encodeURIComponent(author) : "");
+    fetch(ol)
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){
+        var doc = j && j.docs && j.docs[0];
+        if(doc && doc.cover_i){ apply("https://covers.openlibrary.org/b/id/" + doc.cover_i + "-L.jpg"); }
+        else { tryGoogle(); }
+      })
+      .catch(function(){ tryGoogle(); });
+  });
+}
+
+function pageBooks(){
+  const books = DATA.books.map(function(b, i){
+    return "<div>" +
+      bookCover(b, i) +
+      '<div style="font-size:14px;font-weight:600;margin-top:12px;line-height:1.3">' + b.title + "</div>" +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.5);margin-top:3px">' + b.author + "</div></div>";
+  }).join("");
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Bookshelf</div>' +
+    '<div class="r-h1-sm" style="font-family:\'Archivo\',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1;margin-top:16px">The shelf.</div>' +
+    '<div style="max-width:560px;margin-top:22px;font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">Books that shaped how I think — about systems, minds, and making things simple.</div>' +
+    '<div class="r-books" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px 28px;margin-top:44px">' + books + "</div>" +
+  "</main>";
+}
+
+function pagePhotos(){
+  const photos = DATA.photos.map(function(ph){
+    return "<div>" +
+      '<div style="width:100%;aspect-ratio:4/3;overflow:hidden;background:#e4e1da">' +
+        '<img src="' + encodeURI(ph.file) + '" alt="Photograph" loading="lazy" class="ph-img" style="width:100%;height:100%;object-fit:cover;object-position:center;display:block">' +
+      "</div>" +
+    "</div>";
+  }).join("");
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Photographs</div>' +
+    '<div class="r-h1-sm" style="font-family:\'Archivo\',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1;margin-top:16px">Frames I caught.</div>' +
+    '<div style="max-width:560px;margin-top:22px;font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">Caught with a camera, not a model.</div>' +
+    '<div class="r-photos" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px">' + photos + "</div>" +
+  "</main>";
+}
+
+function pageContact(){
+  function row(label, value, href, target, arrow, dl){
+    return '<a href="' + href + '"' + (target ? ' target="_blank" rel="noopener"' : "") + (dl ? " download" : "") + ' class="r-contact" data-h="opacity:.6" style="display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.45)">' + label + "</span>" +
+      '<span style="font-size:24px;font-weight:600;letter-spacing:-.01em">' + value + "</span>" +
+      '<span style="font-family:\'IBM Plex Mono\',monospace;font-size:12px;color:rgba(0,0,0,.4)">' + arrow + "</span></a>";
+  }
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Contact</div>' +
+    '<div class="r-h1" style="font-family:\'Archivo\',sans-serif;font-size:72px;font-weight:800;letter-spacing:-.038em;line-height:.98;margin-top:16px;max-width:800px">Let\'s build<br>something.</div>' +
+    '<div style="max-width:520px;margin-top:24px;font-family:\'Newsreader\',serif;font-size:19px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">Working on something in AI — or want to? I\'m always up for a good problem. The fastest way to reach me is email.</div>' +
+    '<div style="margin-top:44px;border-top:1.5px solid #111">' +
+      row("Email", "shuklautkarsh.u16@gmail.com", "mailto:shuklautkarsh.u16@gmail.com", false, "↗", false) +
+      row("LinkedIn", "in/utkarshcs", "https://www.linkedin.com/in/utkarshcs/", true, "↗", false) +
+      row("X", "@ushukkk", "https://x.com/ushukkk", true, "↗", false) +
+      row("GitHub", "github.com/ushukkla", "https://github.com/ushukkla", true, "↗", false) +
+      row("Résumé", "Request by email", RESUME_MAILTO, false, "→", false) +
+    "</div>" +
+  "</main>";
+}
+
+/* ---------------- RENDER ---------------- */
+function currentMain(){
+  switch(state.page){
+    case "home": return pageHome();
+    case "work": return pageWork();
+    case "writing": return state.post ? pagePost() : pageWritingIndex();
+    case "books": return pageBooks();
+    case "photos": return pagePhotos();
+    case "contact": return pageContact();
+    default: return pageHome();
+  }
+}
+
+function bindHovers(root){
+  root.querySelectorAll("[data-h]").forEach(function(el){
+    const base = el.getAttribute("style") || "";
+    const hover = el.getAttribute("data-h");
+    el.addEventListener("mouseenter", function(){ el.setAttribute("style", base + ";" + hover); });
+    el.addEventListener("mouseleave", function(){ el.setAttribute("style", base); });
+  });
+}
+
+function render(){
+  const app = document.getElementById("app");
+  app.innerHTML =
+    '<div style="max-width:1120px;margin:0 auto;background:#f4f2ee;min-height:100vh;box-shadow:0 0 0 1px rgba(0,0,0,.06)">' +
+      navHTML() + currentMain() + footerHTML() +
+    "</div>";
+  bindHovers(app);
+  manageTimers();
+  if(state.page === "books") loadBookCovers();
+}
+
+function go(page){
+  state.page = page;
+  state.post = null;
+  window.scrollTo({ top: 0 });
+  render();
+}
+function openPost(id){
+  state.page = "writing";
+  state.post = id;
+  window.scrollTo({ top: 0 });
+  render();
+}
+
+/* ---------------- ROTATORS ---------------- */
+function updateLine(){
+  const el = document.getElementById("lineEl");
+  if(!el) return;
+  el.style.animation = "none";
+  el.offsetHeight; // reflow
+  el.textContent = DATA.lines[state.li];
+  el.style.animation = "triviaIn .6s ease both";
+}
+function updateTrivia(){
+  const light = document.getElementById("triviaLight");
+  const num = document.getElementById("triviaNum");
+  const cur = DATA.trivia[state.ti];
+  if(num) num.textContent = "№ " + cur.n;
+  if(!light) return;
+  light.style.animation = "none";
+  light.offsetHeight;
+  light.textContent = cur.t;
+  light.style.animation = "triviaIn .6s ease both";
+}
+function manageTimers(){
+  if(lineTimer){ clearInterval(lineTimer); lineTimer = null; }
+  if(triviaTimer){ clearInterval(triviaTimer); triviaTimer = null; }
+}
+
+/* ---------------- EVENTS ---------------- */
+document.getElementById("app").addEventListener("click", function(e){
+  const nav = e.target.closest("[data-nav]");
+  if(nav){ go(nav.getAttribute("data-nav")); return; }
+  const post = e.target.closest("[data-post]");
+  if(post){ openPost(post.getAttribute("data-post")); return; }
+  const action = e.target.closest("[data-action]");
+  if(action){
+    const act = action.getAttribute("data-action");
+    if(act === "backWriting"){ state.post = null; window.scrollTo({ top: 0 }); render(); return; }
+    if(act === "toggleMenu"){
+      const navEl = action.closest("nav");
+      if(navEl){ const open = navEl.classList.toggle("open"); action.setAttribute("aria-expanded", open ? "true" : "false"); }
+      return;
+    }
+  }
+});
+
+render();
+</script>
+</body>
+</html>
