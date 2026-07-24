@@ -113,6 +113,7 @@ const DATA = {
     { key: "writing", label: "Writing" },
     { key: "books", label: "Books" },
     { key: "photos", label: "Photos" },
+    { key: "interests", label: "Interests" },
     { key: "contact", label: "Contact" },
   ],
   companies: [
@@ -742,6 +743,40 @@ function pagePhotos(){
   "</main>";
 }
 
+function pageInterests(){
+  return '' +
+  '<main style="padding:56px 40px;animation:fadeIn .5s ease both">' +
+    '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.45)">Interests</div>' +
+    '<div class="r-h1-sm" style="font-family:\'Archivo\',sans-serif;font-size:56px;font-weight:800;letter-spacing:-.035em;line-height:1;margin-top:16px">Off the clock.</div>' +
+    '<div style="max-width:580px;margin-top:22px;font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;color:rgba(0,0,0,.7);font-weight:300">Two games I take too seriously — one played against people, one against a position. Both come down to the same thing: deciding well when you can\'t see everything.</div>' +
+
+    '<div class="r-founder" style="margin-top:46px;background:#111;color:#f4f2ee;padding:38px 40px;display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start">' +
+      '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);white-space:nowrap">Poker<br>No-Limit Hold\'em</div>' +
+      '<div>' +
+        '<div style="font-family:\'Archivo\',sans-serif;font-size:29px;font-weight:800;letter-spacing:-.02em;line-height:1.08">Twelfth at the WSOP Circuit — on the first tournament I ever played.</div>' +
+        '<div style="font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;font-weight:300;margin-top:14px;max-width:650px">In May 2026 I sat down for the WSOP Circuit Main Event at TCH Social Austin — $1,700 to enter, a million guaranteed, the largest prize pool in the history of Texas. It was the first live tournament I had ever played.</div>' +
+        '<div style="font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;font-weight:300;margin-top:12px;max-width:650px">Three days later I busted in 12th — a few eliminations short of the televised final table — and cashed for $19,340. No coach, no prior results; just position, patience, and betting on incomplete information. Which, it turns out, is the same thing I do all day with models. The ring went to Trey Brabham. I went home hooked.</div>' +
+        '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;font-family:\'IBM Plex Mono\',monospace;font-size:11px">' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">$1,700 buy-in</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">$1,000,000 GTD</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">12th place</span>' +
+          '<span style="border:1px solid rgba(255,255,255,.25);padding:4px 10px">Cashed $19,340</span>' +
+        "</div>" +
+        '<a href="https://www.poker.org/instant/142/wsopc-tch-austin/?tab=payouts" target="_blank" rel="noopener" data-h="color:#fff" style="display:inline-block;margin-top:20px;font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:#e8500f">See the official results ↗</a>' +
+      "</div>" +
+    "</div>" +
+
+    '<div style="margin-top:52px">' +
+      '<div style="font-size:13px;font-weight:600;letter-spacing:.02em;border-bottom:1.5px solid #111;padding-bottom:12px;display:flex;justify-content:space-between;align-items:baseline"><span>Chess</span><span style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;color:rgba(0,0,0,.45);font-weight:400">current ratings</span></div>' +
+      '<div style="display:flex;gap:56px;flex-wrap:wrap;margin-top:26px">' +
+        '<div><div style="font-family:\'Archivo\',sans-serif;font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1">1656</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-top:6px">Classical</div></div>' +
+        '<div><div style="font-family:\'Archivo\',sans-serif;font-size:52px;font-weight:800;letter-spacing:-.03em;line-height:1">1367</div><div style="font-family:\'IBM Plex Mono\',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.5);margin-top:6px">Blitz</div></div>' +
+      "</div>" +
+      '<div style="max-width:560px;margin-top:24px;font-family:\'Newsreader\',serif;font-size:18px;line-height:1.55;color:rgba(0,0,0,.72);font-weight:300">I play mostly classical — the long game, where there\'s time to read a position all the way through. Blitz is what\'s left when there isn\'t.</div>' +
+    "</div>" +
+  "</main>";
+}
+
 function pageContact(){
   function row(label, value, href, target, arrow, dl){
     return '<a href="' + href + '"' + (target ? ' target="_blank" rel="noopener"' : "") + (dl ? " download" : "") + ' class="r-contact" data-h="opacity:.6" style="display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(0,0,0,.14)">' +
@@ -772,6 +807,7 @@ function currentMain(){
     case "writing": return state.post ? pagePost() : pageWritingIndex();
     case "books": return pageBooks();
     case "photos": return pagePhotos();
+    case "interests": return pageInterests();
     case "contact": return pageContact();
     default: return pageHome();
   }
