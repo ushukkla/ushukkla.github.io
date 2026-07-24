@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Utkarsh Shukla — Senior AI Engineer</title>
 <meta name="description" content="Utkarsh Shukla — Senior AI Engineer in Austin, TX. Applied ML, agents, and tools that let non-engineers do engineering.">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-40P63Z5EN9"></script>
+<!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your Measurement ID (both places) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-40P63Z5EN9');
+  gtag('config', 'G-XXXXXXXXXX');
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,6 +32,9 @@
   .img-slot span{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(0,0,0,.34);padding:0 8px}
   .ph-img{transition:transform .5s ease}
   .ph-img:hover{transform:scale(1.03)}
+  .bk-cover .bk-quote{position:absolute;inset:0;z-index:3;background:rgba(17,17,17,.93);color:#f4f2ee;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;transition:opacity .3s ease;pointer-events:none}
+  .bk-cover .bk-quote span{font-family:'Newsreader',serif;font-style:italic;font-size:12.5px;line-height:1.45;text-align:center}
+  .bk-cover:hover .bk-quote{opacity:1}
   img{max-width:100%}
   .nav-toggle{display:none;background:none;border:none;cursor:pointer;padding:6px;flex-direction:column;justify-content:center;gap:4px;width:34px;height:34px}
   .nav-toggle span{display:block;width:20px;height:2px;background:#111;transition:transform .22s ease,opacity .18s ease}
@@ -294,67 +297,67 @@ const DATA = {
     ]},
   ],
   books: [
-    { title: "Meditations", author: "Marcus Aurelius" },
-    { title: "The Stranger", author: "Albert Camus" },
-    { title: "The Myth of Sisyphus", author: "Albert Camus" },
-    { title: "Beyond Good and Evil", author: "Friedrich Nietzsche" },
-    { title: "Thus Spoke Zarathustra", author: "Friedrich Nietzsche" },
-    { title: "Either/Or", author: "Søren Kierkegaard" },
-    { title: "The Prince", author: "Niccolò Machiavelli" },
-    { title: "Notes from Underground", author: "Fyodor Dostoevsky" },
-    { title: "Crime and Punishment", author: "Fyodor Dostoevsky" },
-    { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky" },
-    { title: "The Old Man and the Sea", author: "Ernest Hemingway" },
-    { title: "The Count of Monte Cristo", author: "Alexandre Dumas" },
-    { title: "Great Expectations", author: "Charles Dickens" },
-    { title: "One Hundred Years of Solitude", author: "Gabriel García Márquez" },
-    { title: "The Fountainhead", author: "Ayn Rand" },
-    { title: "Dune", author: "Frank Herbert" },
-    { title: "A Game of Thrones", author: "George R. R. Martin" },
-    { title: "The Lord of the Rings", author: "J. R. R. Tolkien" },
-    { title: "The Rise of the Dragon", author: "George R. R. Martin" },
-    { title: "The Dark Knight Returns", author: "Frank Miller" },
-    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman" },
-    { title: "Noise", author: "Daniel Kahneman" },
-    { title: "Predictably Irrational", author: "Dan Ariely" },
-    { title: "Man and His Symbols", author: "Carl G. Jung" },
-    { title: "The Interpretation of Dreams", author: "Sigmund Freud" },
-    { title: "The Power of Your Subconscious Mind", author: "Joseph Murphy" },
-    { title: "Reclaiming Conversation", author: "Sherry Turkle" },
-    { title: "All About Love", author: "bell hooks" },
-    { title: "A Short History of Nearly Everything", author: "Bill Bryson" },
-    { title: "Sapiens", author: "Yuval Noah Harari" },
-    { title: "21 Lessons for the 21st Century", author: "Yuval Noah Harari" },
-    { title: "The Beginning of Infinity", author: "David Deutsch" },
-    { title: "Guns, Germs, and Steel", author: "Jared Diamond" },
-    { title: "Gödel, Escher, Bach", author: "Douglas Hofstadter" },
-    { title: "Surely You're Joking, Mr. Feynman!", author: "Richard P. Feynman" },
-    { title: "The Tao of Physics", author: "Fritjof Capra" },
-    { title: "The Black Swan", author: "Nassim Nicholas Taleb" },
-    { title: "Outliers", author: "Malcolm Gladwell" },
-    { title: "The 7 Habits of Highly Effective People", author: "Stephen R. Covey" },
-    { title: "The Almanack of Naval Ravikant", author: "Eric Jorgenson" },
-    { title: "Discover Your Destiny", author: "Robin Sharma" },
-    { title: "The 48 Laws of Power", author: "Robert Greene" },
-    { title: "The Psychology of Money", author: "Morgan Housel" },
-    { title: "The Warren Buffett Way", author: "Robert G. Hagstrom" },
-    { title: "The Art of Strategy", author: "Avinash K. Dixit & Barry J. Nalebuff" },
-    { title: "The Art of War", author: "Sun Tzu" },
-    { title: "Free to Choose", author: "Milton & Rose Friedman" },
-    { title: "The Creative Act", author: "Rick Rubin" },
-    { title: "Tools of Titans", author: "Tim Ferriss" },
-    { title: "The Myth of Excellence", author: "Fred Crawford & Ryan Mathews" },
-    { title: "HBR Guide to Persuasive Presentations", author: "Nancy Duarte" },
-    { title: "The Clockwork Muse", author: "Eviatar Zerubavel" },
-    { title: "Cracking the Coding Interview", author: "Gayle Laakmann McDowell" },
-    { title: "Steve Jobs", author: "Walter Isaacson" },
-    { title: "The Rig Veda", author: "" },
-    { title: "Garuda Purana", author: "B. K. Chaturvedi" },
-    { title: "Indian Philosophy", author: "S. Radhakrishnan" },
-    { title: "Breaking India", author: "Rajiv Malhotra & Aravindan Neelakandan" },
-    { title: "The South African Gandhi", author: "Ashwin Desai & Goolam Vahed" },
-    { title: "Yoga Self-Taught", author: "André Van Lysebeth" },
-    { title: "What Great Paintings Say", author: "Rose-Marie & Rainer Hagen" },
+    { title: "Meditations", author: "Marcus Aurelius", quote: "You have power over your mind — not outside events." },
+    { title: "The Stranger", author: "Albert Camus", quote: "An ordinary man condemned as much for not weeping as for the crime." },
+    { title: "The Myth of Sisyphus", author: "Albert Camus", quote: "The rock rolls back every time — and you choose to smile at it." },
+    { title: "Beyond Good and Evil", author: "Friedrich Nietzsche", quote: "He who fights monsters should see that he does not become one." },
+    { title: "Thus Spoke Zarathustra", author: "Friedrich Nietzsche", quote: "One must still have chaos in oneself to give birth to a dancing star." },
+    { title: "Either/Or", author: "Søren Kierkegaard", quote: "Do it or do not do it — you will regret both." },
+    { title: "The Prince", author: "Niccolò Machiavelli", quote: "It is much safer to be feared than loved." },
+    { title: "Notes from Underground", author: "Fyodor Dostoevsky", quote: "I am a sick man... I am a spiteful man." },
+    { title: "Crime and Punishment", author: "Fyodor Dostoevsky", quote: "Pain and suffering are always inevitable for a large intelligence and a deep heart." },
+    { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", quote: "What is hell? The suffering of being no longer able to love." },
+    { title: "The Old Man and the Sea", author: "Ernest Hemingway", quote: "Dignity is what's left when the sea takes everything else." },
+    { title: "The Count of Monte Cristo", author: "Alexandre Dumas", quote: "All human wisdom is contained in these two words: wait and hope." },
+    { title: "Great Expectations", author: "Charles Dickens", quote: "I loved her against reason, against promise, against peace." },
+    { title: "One Hundred Years of Solitude", author: "Gabriel García Márquez", quote: "A family, a town, a century — all circling the same forgetting." },
+    { title: "The Fountainhead", author: "Ayn Rand", quote: "Integrity is refusing to build anything you don't believe in." },
+    { title: "Dune", author: "Frank Herbert", quote: "Whoever masters fear — and the spice — masters everything." },
+    { title: "A Game of Thrones", author: "George R. R. Martin", quote: "Everyone wants the throne; hesitation is how you lose it." },
+    { title: "The Lord of the Rings", author: "J. R. R. Tolkien", quote: "The smallest hands carry the weight the mighty cannot." },
+    { title: "The Rise of the Dragon", author: "George R. R. Martin", quote: "Fire and blood, drawn out as history and heraldry." },
+    { title: "The Dark Knight Returns", author: "Frank Miller", quote: "An old, furious Batman against a city that stopped believing." },
+    { title: "Thinking, Fast and Slow", author: "Daniel Kahneman", quote: "Two minds run you — one fast and certain, one slow and right." },
+    { title: "Noise", author: "Daniel Kahneman", quote: "Bad judgment isn't only biased; it's inconsistent — and that's costlier." },
+    { title: "Predictably Irrational", author: "Dan Ariely", quote: "We're irrational in ways so regular you can predict them." },
+    { title: "Man and His Symbols", author: "Carl G. Jung", quote: "The mind speaks in symbols — learn to read your own." },
+    { title: "The Interpretation of Dreams", author: "Sigmund Freud", quote: "The dream is the royal road to the unconscious." },
+    { title: "The Power of Your Subconscious Mind", author: "Joseph Murphy", quote: "What you quietly repeat to yourself ends up running you." },
+    { title: "Reclaiming Conversation", author: "Sherry Turkle", quote: "The screen is easy; the real, harder thing is talking." },
+    { title: "All About Love", author: "bell hooks", quote: "Treat love as something you do, not merely something you feel." },
+    { title: "A Short History of Nearly Everything", author: "Bill Bryson", quote: "Everything that ever happened, so you could be here to read it." },
+    { title: "Sapiens", author: "Yuval Noah Harari", quote: "We rule the earth because we can believe in things that don't exist." },
+    { title: "21 Lessons for the 21st Century", author: "Yuval Noah Harari", quote: "In a flood of information, clarity becomes the scarce resource." },
+    { title: "The Beginning of Infinity", author: "David Deutsch", quote: "Good explanations are the engine behind all real progress." },
+    { title: "Guns, Germs, and Steel", author: "Jared Diamond", quote: "Geography, not genius, dealt the hands history played." },
+    { title: "Gödel, Escher, Bach", author: "Douglas Hofstadter", quote: "Meaning loops back on itself until a mind falls out." },
+    { title: "Surely You're Joking, Mr. Feynman!", author: "Richard P. Feynman", quote: "Take nothing on authority; poke it until it breaks or laughs." },
+    { title: "The Tao of Physics", author: "Fritjof Capra", quote: "Look deep enough into matter and it starts to look like a dance." },
+    { title: "The Black Swan", author: "Nassim Nicholas Taleb", quote: "The rare, unimaginable event is the one that decides everything." },
+    { title: "Outliers", author: "Malcolm Gladwell", quote: "Talent is real — but it always arrives with luck and ten thousand hours." },
+    { title: "The 7 Habits of Highly Effective People", author: "Stephen R. Covey", quote: "Character before tactics — start from the end you actually want." },
+    { title: "The Almanack of Naval Ravikant", author: "Eric Jorgenson", quote: "Build quiet leverage and let compounding do the loud work." },
+    { title: "Discover Your Destiny", author: "Robin Sharma", quote: "The life worth chasing is quieter than the one being sold." },
+    { title: "The 48 Laws of Power", author: "Robert Greene", quote: "Power is perception — guard your name, mask your intent." },
+    { title: "The Psychology of Money", author: "Morgan Housel", quote: "Doing well with money is behavior, not intelligence." },
+    { title: "The Warren Buffett Way", author: "Robert G. Hagstrom", quote: "Buy wonderful businesses, then do almost nothing for years." },
+    { title: "The Art of Strategy", author: "Avinash K. Dixit & Barry J. Nalebuff", quote: "Think one move past the person thinking one move ahead." },
+    { title: "The Art of War", author: "Sun Tzu", quote: "All warfare is based on deception." },
+    { title: "Free to Choose", author: "Milton & Rose Friedman", quote: "Freely chosen exchange, not central plans, is what lifts people." },
+    { title: "The Creative Act", author: "Rick Rubin", quote: "You're an antenna — the work is mostly paying attention." },
+    { title: "Tools of Titans", author: "Tim Ferriss", quote: "World-class is a stack of small habits stolen from the best." },
+    { title: "The Myth of Excellence", author: "Fred Crawford & Ryan Mathews", quote: "People stay with companies that respect them, not just impress them." },
+    { title: "HBR Guide to Persuasive Presentations", author: "Nancy Duarte", quote: "A talk is a story where the audience is the hero." },
+    { title: "The Clockwork Muse", author: "Eviatar Zerubavel", quote: "Finishing is a scheduling problem, not an inspiration one." },
+    { title: "Cracking the Coding Interview", author: "Gayle Laakmann McDowell", quote: "Interviews reward calm structure over clever tricks." },
+    { title: "Steve Jobs", author: "Walter Isaacson", quote: "Taste, obsession, and where art is forced to meet engineering." },
+    { title: "The Rig Veda", author: "", quote: "Let noble thoughts come to us from every side." },
+    { title: "Garuda Purana", author: "B. K. Chaturvedi", quote: "A map of what the soul carries past the body." },
+    { title: "Indian Philosophy", author: "S. Radhakrishnan", quote: "India's many schools, read as one long argument with itself." },
+    { title: "Breaking India", author: "Rajiv Malhotra & Aravindan Neelakandan", quote: "A hard look at the forces pulling at the country's seams." },
+    { title: "The South African Gandhi", author: "Ashwin Desai & Goolam Vahed", quote: "Before the Mahatma — a younger, more complicated man in Natal." },
+    { title: "Yoga Self-Taught", author: "André Van Lysebeth", quote: "The body is the first discipline; the breath is the teacher." },
+    { title: "What Great Paintings Say", author: "Rose-Marie & Rainer Hagen", quote: "Every old master is a coded message — here's the key." },
   ],
   photos: [
     { file: "photos/photo-01.jpg", caption: "№ 01" },
@@ -652,8 +655,9 @@ function bookCover(b, i){
         '<div style="font-family:\'IBM Plex Mono\',monospace;font-size:9.5px;letter-spacing:.04em;opacity:.85;line-height:1.35">' + b.author + "</div></div>" +
     "</div>";
   const img = local ? '<img src="' + encodeURI(local) + '" loading="lazy" alt="' + b.title.replace(/"/g, "&quot;") + ' cover" onload="var f=this.parentNode.querySelector(\'.bk-fallback\'); if(f){f.style.opacity=0;}" onerror="this.remove();" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1">' : "";
+  const quoteEl = b.quote ? '<div class="bk-quote"><span>' + String(b.quote).replace(/"/g, "&quot;") + "</span></div>" : "";
   return '<div class="bk-cover" data-q="' + encodeURIComponent(q) + '" data-title="' + encodeURIComponent(b.title) + '" data-author="' + encodeURIComponent(b.author || "") + '"' + (local ? ' data-local="1"' : "") + ' style="position:relative;width:100%;aspect-ratio:2/3;box-shadow:0 12px 26px -18px rgba(0,0,0,.6);background:#d8d5cd;background-size:cover;background-position:center;overflow:hidden">' +
-    fallback + img +
+    fallback + img + quoteEl +
   "</div>";
 }
 
